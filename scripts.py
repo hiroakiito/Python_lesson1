@@ -3,18 +3,17 @@ import itertools
 
 ### 検索ツールサンプル
 ### これをベースに課題の内容を追記してください
-
 # 検索ソース
 # source=["ねずこ","たんじろう","きょうじゅろう","ぎゆう","げんや","かなお","ぜんいつ"]
 
-# csvからの取得
-with open('character.csv', 'r', newline = '') as f:
-    reader = csv.reader(f)
-    source = list(itertools.chain.from_iterable([ e for e in reader ]))
-
 ### 検索ツール
+
 def search():
-    word =input("鬼滅の登場人物の名前を入力してください >>> ")
+    # csvからの取得
+    with open('character.csv', 'r', newline = '') as f:
+        reader = csv.reader(f)
+        source = list(itertools.chain.from_iterable([ e for e in reader ]))
+        word =input("鬼滅の登場人物の名前を入力してください >>> ")
     
     ### ここに検索ロジックを書く
     if word in source:
